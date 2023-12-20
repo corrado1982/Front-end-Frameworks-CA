@@ -1,19 +1,20 @@
-// import React from "react";
-// import { useParams } from "react-router-dom";
-// //una prova alternativa
-// function SingleProduct(props) {
-//   const { title, description, imageUrl, price } = props.post;
-//   const params = useParams();
-//   // console.log(post);
-//   console.log("hi");
-//   return (
-//     <div>
-//       <h2>{title}</h2>
-//       <p>{description}</p>
-//       <img src={imageUrl} alt="image of " />
-//       <p>{price}</p>
-//     </div>
-//   );
-// }
+import React from "react";
+import { Link } from "react-router-dom";
 
-// export default SingleProduct;
+function SingleProduct(props) {
+  const { title, description, imageUrl, price, id } = props.post;
+  // const params = useParams();
+  // console.log(params);
+  console.log("hi");
+  return (
+    <div>
+      <h2>{title}</h2>
+      <p>{description}</p>
+      <img src={imageUrl} alt="image of " />
+      <p>{price}</p>
+      <Link to={`product/${id}`}>See detail</Link>
+    </div>
+  );
+}
+
+export default SingleProduct;

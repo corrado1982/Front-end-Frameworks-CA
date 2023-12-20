@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { url } from "../../constants/api";
-import ProductPage from "../../pages/ProductPage";
+// import ProductPage from "../../pages/ProductPage";
+import SingleProduct from "./SingleProduct";
 
 function ProductList() {
   const [posts, setPosts] = useState([]);
@@ -19,7 +20,7 @@ function ProductList() {
       <div>
         {posts.map((post) => {
           console.log(post);
-          return <ProductPage key={post.id} post={post} />;
+          return <SingleProduct key={post.id} post={post} />;
         })}
       </div>
     </div>
