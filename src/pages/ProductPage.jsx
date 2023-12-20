@@ -1,10 +1,10 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-//una prova alternativa
+import { Link, useParams } from "react-router-dom";
+
 function ProductPage(props) {
-  const { title, description, imageUrl, price } = props.post;
-  const params = useParams();
-  console.log(params);
+  const { title, description, imageUrl, price, id } = props.post;
+  // const params = useParams();
+  // console.log(params);
   console.log("hi");
   return (
     <div>
@@ -12,6 +12,7 @@ function ProductPage(props) {
       <p>{description}</p>
       <img src={imageUrl} alt="image of " />
       <p>{price}</p>
+      <Link to={`product/${id}`}>See detail</Link>
     </div>
   );
 }
