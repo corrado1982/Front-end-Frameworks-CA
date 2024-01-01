@@ -2,7 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function SingleProduct(props) {
-  const { title, description, imageUrl, price, id } = props.post;
+  const { title, description, imageUrl, price, id, discountedPrice } =
+    props.post;
+
   // const params = useParams();
   // console.log(params);
   console.log("hi");
@@ -11,7 +13,8 @@ function SingleProduct(props) {
       <h2>{title}</h2>
       <p>{description}</p>
       <img src={imageUrl} alt="image of " />
-      <p>{price}</p>
+      {/* <p>{price}</p> */}
+      <p>{discountedPrice}</p>
       <Link to={`product/${id}`}>See detail</Link>
     </div>
   );
