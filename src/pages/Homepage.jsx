@@ -3,7 +3,7 @@ import ProductList from "../components/products/ProductList";
 function HomePage() {
   return (
     <div>
-      <h1>Homa Page</h1>
+      <h1>Home Page</h1>
       <ProductList />
     </div>
   );

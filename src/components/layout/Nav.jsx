@@ -1,8 +1,10 @@
+import styles from "./Nav.module.css";
 import { Link, NavLink } from "react-router-dom";
+import styled from "styled-components";
 
 export default function Nav() {
   return (
-    <nav className="bg-primary">
+    <nav className={styles.nav}>
       <ul>
         <li>
           <NavLink to="/">Home</NavLink>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { url } from "../constants/api";
+import styles from "../components/products/SingleProduct.module.css";
 
 function ProductPage() {
   const [data, setData] = useState(null);

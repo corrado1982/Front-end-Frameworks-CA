@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { url } from "../../constants/api";
 // import ProductPage from "../../pages/ProductPage";
 import SingleProduct from "./SingleProduct";
+import styles from "./ProductList.module.css";
 
 function ProductList() {
   const [posts, setPosts] = useState([]);
@@ -14,15 +15,13 @@ function ProductList() {
     }
     getData();
   }, []);
+  //provo a levare un div
   return (
-    <div>
-      <div>Product List</div>
-      <div>
-        {posts.map((post) => {
-          console.log(post);
-          return <SingleProduct key={post.id} post={post} />;
-        })}
-      </div>
+    <div className={styles.productcontainer}>
+      {posts.map((post) => {
+        console.log(post);
+        return <SingleProduct key={post.id} post={post} />;
+      })}
     </div>
   );
 }

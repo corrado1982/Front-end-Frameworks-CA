@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import styles from "./SingleProduct.module.css";
 
 function SingleProduct(props) {
   const { title, description, imageUrl, price, id, discountedPrice } =
@@ -13,7 +14,7 @@ function SingleProduct(props) {
 
   console.log(isDiscounted);
   return (
-    <div>
+    <div className={styles.card}>
       <h2>{title}</h2>
       <p>{description}</p>
       <img src={imageUrl} alt="image of " />
@@ -21,11 +22,11 @@ function SingleProduct(props) {
         {isDiscounted ? (
           <div>
             {" "}
-            <p>{discountedPrice}</p>{" "}
-            <p>discounted: {price - discountedPrice}</p>{" "}
+            <p>discount of {price - discountedPrice} $</p>{" "}
+            <p>Actual Price: {discountedPrice} $</p>{" "}
           </div>
         ) : (
-          <p>{price}</p>
+          <p>Price: {price} $</p>
         )}
       </div>
       <Link to={`product/${id}`}>See detail</Link>
