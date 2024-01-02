@@ -16,7 +16,7 @@ function ProductPage() {
 
         const response = await fetch(url);
         const json = await response.json();
-        console.log(json);
+
         setData(json);
       } catch (error) {
         console.log(error);
@@ -38,14 +38,28 @@ function ProductPage() {
 
   console.log(data);
 
+  const { title, description, discountedPrice, rating, imageUrl, reviews } =
+    data;
+
   return (
     <div>
-      <h1>{data.title}</h1>
-      <p>{data.description}</p>
-      <p>Price: {data.price}</p>
-      <p>Discount Price: {data.discountedPrice}</p>
-      <p>Rating: {data.rating}</p>
-      <img src={data.imageUrl} alt="image of {data.imageUrl}" />
+      <h1>{title}</h1>
+      <p>{description}</p>
+      {/* <p>Price: {data.price}</p> */}
+      <p>Price: {discountedPrice}</p>
+      <p>Rating: {rating}</p>
+      <img src={imageUrl} alt="image of {data.imageUrl}" />
+      <div>
+        {reviews.map((review) => (
+          <div>
+            <div>
+              <h3>{review.username}</h3>
+              Rating: {review.rating}
+            </div>
+            <p>{review.description}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
