@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { url } from "../constants/api";
 import styles from "../components/products/SingleProduct.module.css";
+import { useCart } from "../context/CartContext";
 
 function ProductPage() {
   const [data, setData] = useState(null);
@@ -42,6 +43,8 @@ function ProductPage() {
   const { title, description, discountedPrice, rating, imageUrl, reviews } =
     data;
 
+  const { addToCart } = useCart();
+
   return (
     <div>
       <h1>{title}</h1>
@@ -50,6 +53,7 @@ function ProductPage() {
       <p>Price: {discountedPrice}</p>
       <p>Rating: {rating}</p>
       <img src={imageUrl} alt="image of {data.imageUrl}" />
+      <button onClick={() => addToCart(data)}>add to cart</button>
       <div>
         {reviews.map((review) => (
           <div>
