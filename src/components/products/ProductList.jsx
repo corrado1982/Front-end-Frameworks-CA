@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { url } from "../../constants/api";
-// import ProductPage from "../../pages/ProductPage";
 import SingleProduct from "./SingleProduct";
 import styles from "./ProductList.module.css";
 
