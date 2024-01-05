@@ -37,8 +37,12 @@ export const CartProvider = ({ children }) => {
       }
     });
   };
-
   const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+  //prova clear
+  const clearCart = () => {
+    localStorage.clear();
+    window.location.reload();
+  };
 
   const totalPrice = cart.reduce(
     (total, item) => total + item.discountedPrice * item.quantity,
@@ -47,7 +51,14 @@ export const CartProvider = ({ children }) => {
 
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, removeFromCart, totalItems, totalPrice }}
+      value={{
+        cart,
+        addToCart,
+        removeFromCart,
+        totalItems,
+        totalPrice,
+        clearCart,
+      }}
     >
       {children}
     </CartContext.Provider>
