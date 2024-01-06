@@ -30,7 +30,7 @@ function ProductList() {
 
     setFilteredItems(filteredItem);
   };
-  //provo a levare un div
+
   return (
     <div>
       <input

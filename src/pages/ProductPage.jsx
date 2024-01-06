@@ -46,7 +46,7 @@ function ProductPage() {
   const { addToCart } = useCart();
 
   return (
-    <div>
+    <div className={styles.card}>
       <h1>{title}</h1>
       <p>{description}</p>
       {/* <p>Price: {data.price}</p> */}
