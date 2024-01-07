@@ -20,11 +20,6 @@ function ContactPage() {
     // const formContent = JSON.stringify(body);
 
     console.log(body);
-
-    // fetch("http://www.dummy.com", {
-    //   method: "POST",
-    //   body: JSON.stringify(body),
-    // });
   }
   function onTextInputChange(event) {
     const value = event.target.value;
@@ -82,21 +77,13 @@ function ContactPage() {
           <textarea
             rows="4"
             cols="25"
-            // form="usrform"
             name="object"
             value={object}
             required
             minLength={3}
             onChange={onTextInputChange}
           ></textarea>
-          {/* <input
-            type="text"
-            name="object"
-            value={object}
-            minLength={3}
-            required
-            onChange={onTextInputChange}
-          /> */}
+
           <Button>Submit</Button>
         </form>
       </div>
