@@ -1,7 +1,11 @@
 .successFeedback {
   h2,
   button {
+    padding: 0;
     display: flex;
     justify-content: center;
+  }
+  a {
+    padding: 10px;
   }
 }
