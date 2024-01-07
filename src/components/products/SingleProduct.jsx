@@ -13,7 +13,6 @@ function SingleProduct(props) {
     isDiscounted = true;
   }
 
-  console.log(isDiscounted);
   return (
     <div className={styles.card}>
       <h2>{title}</h2>
