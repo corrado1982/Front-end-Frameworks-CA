@@ -29,7 +29,7 @@ const CartList = () => {
         <p>Total : {totalPrice} NOK</p>
         {/* removed:refresh="true" */}
         <Button onClick={clearCart}>
-          <Link to="/success">pay now</Link>
+          <Link to="/success">Pay Now</Link>
         </Button>
       </div>
     </div>
