@@ -41,7 +41,7 @@ export const CartProvider = ({ children }) => {
   //prova clear
   const clearCart = () => {
     localStorage.clear();
-    window.location.reload();
+    // Removed window.location.reload();
   };
 
   const totalPrice = cart.reduce(
