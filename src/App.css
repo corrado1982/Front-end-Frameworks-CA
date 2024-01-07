@@ -1,3 +1,31 @@
+h1 {
+  display: flex;
+  justify-content: center;
+}
+body {
+  background-color: rgb(222, 247, 253);
+  margin: 0;
+}
+input,
+label {
+  margin: 10px auto 10px auto;
+  display: flex;
+  justify-content: center;
+  height: 20px;
+  /* margin: auto; */
+}
+a,
+p,
+button,
+label {
+  font-size: 1.2em;
+}
+h1 {
+  font-size: 3em;
+}
+h2 {
+  font-size: 2em;
+}
 /* #root {
   max-width: 1280px;
   margin: 0 auto;

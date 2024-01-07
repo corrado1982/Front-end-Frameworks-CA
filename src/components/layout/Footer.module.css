@@ -1,0 +1,9 @@
+.footer {
+  background-color: rgb(139, 229, 252);
+  /* position: revert; */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+}

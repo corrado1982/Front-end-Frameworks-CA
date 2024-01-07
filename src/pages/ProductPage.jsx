@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { url } from "../constants/api";
 import styles from "../components/products/SingleProduct.module.css";
+import container from "../components/products/ProductList.module.css";
 import { useCart } from "../context/CartContext";
+import Button from "../styles/Button";
 
 function ProductPage() {
   const [data, setData] = useState(null);
@@ -46,24 +48,26 @@ function ProductPage() {
   const { addToCart } = useCart();
 
   return (
-    <div className={styles.card}>
-      <h1>{title}</h1>
-      <p>{description}</p>
-      {/* <p>Price: {data.price}</p> */}
-      <p>Price: {discountedPrice}</p>
-      <p>Rating: {rating}</p>
-      <img src={imageUrl} alt="image of {data.imageUrl}" />
-      <button onClick={() => addToCart(data)}>add to cart</button>
-      <div>
-        {reviews.map((review) => (
-          <div>
-            <div>
-              <h3>{review.username}</h3>
-              Rating: {review.rating}
+    <div className={container.productcontainer}>
+      <div className={styles.card}>
+        <h2>{title}</h2>
+        <p>{description}</p>
+
+        <p>Price: {discountedPrice}</p>
+        <p>Rating: {rating}</p>
+        <img src={imageUrl} alt="image of {data.imageUrl}" />
+        <Button onClick={() => addToCart(data)}>add to cart</Button>
+        <div>
+          {reviews.map((review) => (
+            <div className={styles.reviewstyle}>
+              <div>
+                <h2>{review.username}</h2>
+                <p>Rating: {review.rating}</p>
+              </div>
+              <p>{review.description}</p>
             </div>
-            <p>{review.description}</p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./SingleProduct.module.css";
+import Button from "../../styles/Button";
 
 function SingleProduct(props) {
   const { title, description, imageUrl, price, id, discountedPrice } =
@@ -22,14 +23,17 @@ function SingleProduct(props) {
         {isDiscounted ? (
           <div>
             {" "}
-            <p>discount of {price - discountedPrice} $</p>{" "}
-            <p>Actual Price: {discountedPrice} $</p>{" "}
+            <p>discount of {price - discountedPrice} NOK</p>{" "}
+            <p>Actual Price: {discountedPrice} NOK</p>{" "}
           </div>
         ) : (
-          <p>Price: {price} $</p>
+          <p>Price: {price} NOK</p>
         )}
       </div>
-      <Link to={`product/${id}`}>See detail</Link>
+
+      <Link to={`product/${id}`}>
+        <Button>See detail</Button>
+      </Link>
     </div>
   );
 }

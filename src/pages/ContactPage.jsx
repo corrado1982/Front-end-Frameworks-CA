@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import styles from "./ContactPage.module.css";
+import Button from "../styles/Button";
 
 function ContactPage() {
   const [fullName, setFullName] = useState("");
@@ -46,7 +48,7 @@ function ContactPage() {
         <h1>Contact Page</h1>
       </div>
       <div>
-        <form onSubmit={onFormSubmit}>
+        <form onSubmit={onFormSubmit} className={styles.formContainer}>
           {/* NAME */}
           <label htmlFor="full-name">Full name</label>
           <input
@@ -68,6 +70,7 @@ function ContactPage() {
           {/* Mail */}
           <label htmlFor="mail">Mail</label>
           <input
+            type="email"
             name="mail"
             value={mail}
             pattern="/[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g"
@@ -76,14 +79,25 @@ function ContactPage() {
           />
           {/* Body */}
           <label htmlFor="object">Body</label>
-          <input
+          <textarea
+            rows="4"
+            cols="25"
+            // form="usrform"
+            name="object"
+            value={object}
+            required
+            minLength={3}
+            onChange={onTextInputChange}
+          ></textarea>
+          {/* <input
+            type="text"
             name="object"
             value={object}
             minLength={3}
             required
             onChange={onTextInputChange}
-          />
-          <button>Submit</button>
+          /> */}
+          <Button>Submit</Button>
         </form>
       </div>
     </div>

@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
+import Button from "../../styles/Button";
+import SecondaryButton from "../../styles/SecondaryButton";
+import styles from "./CartList.module.css";
 
 const CartList = () => {
   const { cart, addToCart, removeFromCart, totalPrice, clearCart } = useCart();
@@ -7,22 +10,30 @@ const CartList = () => {
   return (
     <div>
       {cart.map((item) => (
-        <div key={item.id}>
-          <h3>{item.title}</h3>
-          <p>{item.discountedPrice}</p>
-
+        <div key={item.id} className={styles.backgroundCartItem}>
+          <div>
+            <h3>{item.title}</h3>
+            <img src={item.imageUrl}></img>
+            <p>Price: {item.discountedPrice} NOK</p>
+          </div>
           <p>Quantity: {item.quantity}</p>
-          <button onClick={() => addToCart(item)}>add</button>
-          <button onClick={() => removeFromCart(item.id)}>revove</button>
+          <div>
+            <Button onClick={() => addToCart(item)}>Add</Button>
+            <SecondaryButton onClick={() => removeFromCart(item.id)}>
+              Remove
+            </SecondaryButton>
+          </div>
         </div>
       ))}
-      <p>Total : {totalPrice}</p>
+      <div className={styles.checkOutDiv}>
+        <p>Total : {totalPrice} NOK</p>
 
-      <button onClick={clearCart}>
-        <Link to="/success" refresh="true">
-          Pay Now
-        </Link>
-      </button>
+        <Button onClick={clearCart}>
+          <Link to="/success" refresh="true">
+            Pay Now
+          </Link>
+        </Button>
+      </div>
     </div>
   );
 };
