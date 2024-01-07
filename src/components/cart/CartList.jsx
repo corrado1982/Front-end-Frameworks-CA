@@ -27,11 +27,9 @@ const CartList = () => {
       ))}
       <div className={styles.checkOutDiv}>
         <p>Total : {totalPrice} NOK</p>
-
+        {/* removed:refresh="true" */}
         <Button onClick={clearCart}>
-          <Link to="/success" refresh="true">
-            Pay Now
-          </Link>
+          <Link to="/success">pay now</Link>
         </Button>
       </div>
     </div>
