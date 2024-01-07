@@ -8,7 +8,7 @@ export default function Nav() {
   const { totalItems } = useCart();
 
   return (
-    <nav className={styles.nav}>
+    <nav>
       <ul>
         <li>
           <NavLink to="/">Home</NavLink>

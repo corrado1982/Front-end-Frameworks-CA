@@ -1,9 +1,9 @@
 .nav {
   /* position: fixed; */
-  /* left: 0;
+  left: 0;
   top: 0;
-  width: 100%; */
-  /* position: sticky; */
+  width: 100%;
+  position: sticky;
   background-color: rgb(139, 229, 252);
   padding: 20px 20px 0px 20px;
 }

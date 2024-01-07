@@ -1,8 +1,9 @@
 import Nav from "./Nav";
+import styles from "./Nav.module.css";
 
 export default function Header() {
   return (
-    <header>
+    <header className={styles.nav}>
       <Nav />
     </header>
   );
