@@ -39,3 +39,35 @@ There will be a contact page which will contain a contact form with the followin
 - Vite
 - React
 - Javascript
+
+- ## Getting Started
+
+### Installing
+
+1. Clone the repo:
+
+```bash
+git clone github.com/corrado1982/Front-end-Frameworks-CA.git
+```
+
+2. Install the dependencies:
+
+```
+npm install
+```
+
+### Running
+
+```bash
+npm run build
+```
+
+## Contact
+
+[My LinkedIn page](https://www.linkedin.com/in/corrado-rofi-66b073128)
+
+Email: corrado.rofi@gmail.com
+
+## Link to Netlify
+
+https://lucky-parfait-6295c8.netlify.app/
